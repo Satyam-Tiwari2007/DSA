@@ -89,6 +89,21 @@ void pattern9(int n){
         cout<<endl;
     }
 }
+void pattern10(int n){
+    for(int i=0;i<n;i++){
+        int star=0;
+        if(i%2==0){
+            star=1;
+        }
+        
+        for(int j=0;j<=i;j++){
+            cout<<star;
+            star=1-star;
+            
+        }
+        cout<<endl;
+    }
+}
 int main() {
     int n;
     cout << "Enter the number of rows: ";
@@ -102,6 +117,7 @@ int main() {
     //pattern7(n);
     //pattern8(n);
     //pattern9(n);
+    pattern10(n);
 
     return 0;
 } 
