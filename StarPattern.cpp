@@ -183,7 +183,46 @@ void pattern16(int n){
                
         }
     }
+void pattern17(int n){
+    
+    for (int i=0;i<n;i++){
+        for(char ch ='E'-i;ch<='E';ch++){
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+    
+}
+void pattern18(int n){
+    for(int i=0;i<2*n;i++){
+        if(i<n){
+            for(int j=0;j<n-i;j++){
+                cout<<"*";
+            }
+            for(int j=0;j<2*i;j++){
+                cout<<" ";
+            }
+            for(int j=0;j<n-i;j++){
+                cout<<"*";
+            }
+        }
+        if(i>=n){
+            for(int j=0;j<i-n+1;j++){
+                cout<<"*";
+            }
+            for(int j=0;j<2*(2*n-i-1);j++){
+                cout<<" ";
+            }
+            for(int j=0;j<i-n+1;j++){
+                cout<<"*";
+            }
 
+        }
+        cout<<endl;
+
+
+    }
+}
 int main() {
     int n;
     cout << "Enter the number of rows: ";
@@ -203,7 +242,9 @@ int main() {
     //pattern13(n);
     //pattern14(n);
     //pattern15(n);
-    pattern16(n);
+    //pattern16(n);
+    //pattern17(n);
+    pattern18(n);
 
 
     return 0;
