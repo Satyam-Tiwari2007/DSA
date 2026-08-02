@@ -223,6 +223,42 @@ void pattern18(int n){
 
     }
 }
+void pattern19(int n){
+    int star=0;
+    for(int i=0;i<2*n-1;i++){
+        
+        if(i<n){
+            star=i+1;
+        }
+        if(i>=n){
+            star=2*n-i-1;
+        }
+
+        for(int j= 0;j<star;j++){
+            cout<<"*";
+        }
+        for(int j=0;j<2*(n-star);j++){
+            cout<<" ";
+        }
+        
+        for(int j= 0;j<star;j++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
+void pattern20(int n){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(i==0||i==n-1||j==0||j==n-1){
+                cout<<"*";
+            }
+            else{cout<<" ";}
+        }
+        cout<<endl;
+    }
+}
+
 int main() {
     int n;
     cout << "Enter the number of rows: ";
@@ -244,7 +280,9 @@ int main() {
     //pattern15(n);
     //pattern16(n);
     //pattern17(n);
-    pattern18(n);
+    //pattern18(n);
+    //pattern19(n);
+    pattern20(n);
 
 
     return 0;
