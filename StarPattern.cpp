@@ -104,6 +104,29 @@ void pattern10(int n){
         cout<<endl;
     }
 }
+void pattern11(int n){
+    int space=2*n-2;
+        
+    for(int i=0;i<n;i++){
+        
+        for(int j=0;j<i+1;j++){
+            cout<<j+1;
+        }
+        for(int j=0;j<space;j++){
+            cout<<" ";
+        }
+        int num=i+1;
+        for(int j=0;j<i+1;j++){
+            
+            cout<<num;
+            num-=1;
+        }
+        cout<<endl;
+        space -=2;
+
+
+    }
+}
 int main() {
     int n;
     cout << "Enter the number of rows: ";
@@ -117,7 +140,8 @@ int main() {
     //pattern7(n);
     //pattern8(n);
     //pattern9(n);
-    pattern10(n);
+    //pattern10(n);
+    pattern11(n);
 
     return 0;
 } 
