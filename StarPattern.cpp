@@ -127,6 +127,16 @@ void pattern11(int n){
 
     }
 }
+void pattern12(int n){
+    int num=1;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            cout<<num<<" ";
+            num++;
+        }
+        cout<<endl;
+    }
+}
 int main() {
     int n;
     cout << "Enter the number of rows: ";
@@ -141,7 +151,9 @@ int main() {
     //pattern8(n);
     //pattern9(n);
     //pattern10(n);
-    pattern11(n);
+    //pattern11(n);
+    pattern12(n);
+
 
     return 0;
 } 
