@@ -6,6 +6,7 @@ int main(){
     cin>>n;
     int arr[n];
     unordered_map<int,int> hashh;
+    //we can also use map only.
     cout<<"Enter your array : ";
     for(int i =0;i<n;i++){
         cin>>arr[i];
