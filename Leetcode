@@ -1,0 +1,39 @@
+class Solution {
+public:
+    int maxProduct(int n) {
+
+        // Stores the largest digit found so far
+        int firstMax = 0;
+
+        // Stores the second largest digit found so far
+        int secondMax = 0;
+
+        // Traverse every digit of the number
+        while (n > 0) {
+
+            // Extract the last digit
+            int digit = n % 10;
+
+            // If current digit is larger than the largest digit
+            if (digit > firstMax) {
+
+                // Old largest becomes second largest
+                secondMax = firstMax;
+
+                // Update largest
+                firstMax = digit;
+            }
+
+            // Otherwise, check if it should become the second largest
+            else if (digit > secondMax) {
+                secondMax = digit;
+            }
+
+            // Remove the last digit
+            n /= 10;
+        }
+
+        // Return the product of the two largest digits
+        return firstMax * secondMax;
+    }
+};
