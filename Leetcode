@@ -37,3 +37,61 @@ public:
         return firstMax * secondMax;
     }
 };
+
+
+class Solution {
+public:
+    // Function to check if a number is prime
+    bool isPrime(long long num) {
+
+        // Numbers less than 2 are not prime
+        if (num < 2) return false;
+
+        // Check divisibility up to sqrt(num)
+        for (long long i = 2; i * i <= num; i++) {
+            if (num % i == 0)
+                return false;
+        }
+
+        return true;
+    }
+
+    long long sumOfLargestPrimes(string s) {
+
+        // Store only unique prime numbers
+        unordered_set<long long> primes;
+
+        int n = s.size();
+
+        // Generate all possible substrings
+        for (int i = 0; i < n; i++) {
+
+            long long num = 0;
+
+            for (int j = i; j < n; j++) {
+
+                // Build the current number digit by digit
+                num = num * 10 + (s[j] - '0');
+
+                // If it is prime, store it
+                if (isPrime(num))
+                    primes.insert(num);
+            }
+        }
+
+        // Move primes into a vector
+        vector<long long> arr(primes.begin(), primes.end());
+
+        // Sort in descending order
+        sort(arr.begin(), arr.end(), greater<long long>());
+
+        long long ans = 0;
+
+        // Sum the largest 3 primes (or fewer if less than 3 exist)
+        for (int i = 0; i < min(3, (int)arr.size()); i++) {
+            ans += arr[i];
+        }
+
+        return ans;
+    }
+};
