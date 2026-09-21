@@ -11,7 +11,7 @@ public:
         int firstMax = 0;
 
         // Stores the second largest digit found so far
-        int secondMax = 0;
+        int secondMax = 0;.
 
         // Traverse every digit of the number
         while (n > 0) {
