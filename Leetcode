@@ -3,8 +3,6 @@
 daily problem of the day questions solution is here which i solved by my own . 
 
 
-
-
 class Solution {
 public:
     int maxProduct(int n) {
