@@ -576,8 +576,61 @@ public:
         }
 
         return ans + need;
-
+}
+};
 
 TODAY(10/10/2026)
+class Solution {
+public:
+    long long minSumSquareDiff(vector<int>& nums1, vector<int>& nums2, int k1, int k2) {
+        long long k = 1LL * k1 + k2;
+        vector<long long> diff;
+        long long mx = 0, sum = 0;
+
+        for (int i = 0; i < nums1.size(); i++) {
+            long long d = abs(nums1[i] - nums2[i]);
+            diff.push_back(d);
+            mx = max(mx, d);
+            sum += d;
+        }
+
+        if (k >= sum) return 0;
+
+        long long l = 0, r = mx;
+        while (l < r) {
+            long long mid = (l + r) / 2;
+            long long need = 0;
+            for (auto d : diff)
+                if (d > mid) need += d - mid;
+
+            if (need > k)
+                l = mid + 1;
+            else
+                r = mid;
+        }
+
+        long long t = l;
+        long long used = 0;
+        for (auto &d : diff) {
+            if (d > t) {
+                used += d - t;
+                d = t;
+            }
+        }
+
+        long long rem = k - used;
+        for (auto &d : diff) {
+            if (rem == 0) break;
+            if (d == t && d > 0) {
+                d--;
+                rem--;
+            }
+        }
+
+        long long ans = 0;
+        for (auto d : diff)
+            ans += d * d;
+
+        return ans;
     }
 };
