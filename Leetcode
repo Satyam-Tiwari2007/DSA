@@ -710,3 +710,26 @@ public:
 
 
 TODAY(14/10/2025)
+class Solution {
+public:
+    string maxSumOfSquares(int num, int sum) {
+        if (sum > 9 * num)
+            return "";
+
+        int nines = sum / 9;
+        int rem = sum % 9;
+
+        string ans;
+
+        while (nines--)
+            ans += '9';
+
+        if (rem)
+            ans += char(rem + '0');
+
+        while (ans.size() < num)
+            ans += '0';
+
+        return ans;
+    }
+};
