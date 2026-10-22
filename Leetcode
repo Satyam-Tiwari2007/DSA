@@ -24,6 +24,7 @@ public:
                 // Old largest becomes second largest
                 secondMax = firstMax;
 
+
                 // Update largest
                 firstMax = digit;
             }
