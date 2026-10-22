@@ -821,3 +821,41 @@ public:
         
     }
 };
+
+
+class Solution {
+public:
+    vector<int> findDiagonalOrder(vector<vector<int>>& mat) {
+        int m = mat.size();
+        int n = mat[0].size();
+
+        vector<int> ans;
+
+        for (int d = 0; d < m + n - 1; d++) {
+
+            if (d % 2 == 0) {
+                // Move Up-Right
+                int row = min(d, m - 1);
+                int col = d - row;
+
+                while (row >= 0 && col < n) {
+                    ans.push_back(mat[row][col]);
+                    row--;
+                    col++;
+                }
+            } else {
+                // Move Down-Left
+                int col = min(d, n - 1);
+                int row = d - col;
+
+                while (row < m && col >= 0) {
+                    ans.push_back(mat[row][col]);
+                    row++;
+                    col--;
+                }
+            }
+        }
+
+        return ans;
+    }
+};
