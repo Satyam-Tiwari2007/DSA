@@ -3,7 +3,6 @@ daily problem of the day questions solution is here which i solved by my own .
 
 QUESTION 1 :-
 class Solution {
-public:
     int maxProduct(int n) {
 
         // Stores the largest digit found so far
