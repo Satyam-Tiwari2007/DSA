@@ -9,7 +9,7 @@ public:
  
         for(int i =0;i<nums.size();i++){
             int index = abs(nums[i])-1;
-            if(index>=nums.size()) {continue;}
+            if(index>=nums.size()) {continue;} 
             if(nums[index]>=0){
                 nums[index]= -nums[index];
             }
