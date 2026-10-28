@@ -13,7 +13,7 @@ class Solution {
         int secondMax = 0;.
 
         // Traverse every digit of the number
-        while (n > 0) {
+        while (n > 0) { 
 
             // Extract the last digit
             int digit = n % 10;
