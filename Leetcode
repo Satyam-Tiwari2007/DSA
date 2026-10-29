@@ -7,7 +7,7 @@ class Solution {
 
         // Stores the largest digit found so far 
         int firstMax = 0;
-
+ 
 
         // Stores the second largest digit found so far
         int secondMax = 0;.
