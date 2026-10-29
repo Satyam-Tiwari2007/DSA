@@ -5,7 +5,7 @@ QUESTION 1 :-
 class Solution {
     int maxProduct(int n) {
 
-        // Stores the largest digit found so far
+        // Stores the largest digit found so far 
         int firstMax = 0;
 
 
