@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+         int n = candyType.size();
+        unordered_set<int> st;
+        for(int i =0;i<n;i++){
+            st.insert(candyType[i]);
+        }
+        int cnt = 0;
+        for(int x : st){
+            cnt++;
+        }
+        if(cnt<n/2){
+            return cnt;
+        }else{
+            return n/2;
+        }
+    }
+};
