@@ -30,7 +30,7 @@ class Solution {
             }
 
             // Otherwise, check if it should become the second largest
-            else if (digit > secondMax) {
+            else if (digit > secondMax) {. 
                 secondMax = digit;
             }
 
