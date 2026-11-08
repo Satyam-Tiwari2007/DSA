@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+         int left = 0;
+         int right = nums.size()-1;
+         int minelement = INT_MAX;
+         int mini = INT_MAX;
+         while(left<=right){
+              int mid = left + (right-left)/2;
+              if(nums[mid]<minelement){
+                   minelement = nums[mid];
+                   mini = min(mini,minelement);
+              }
+
+              if(nums[left]<=nums[mid]){
+                   minelement = nums[left];
+                   mini = min(mini,minelement);
+                   left = mid+1;
+              }else{
+                   minelement = nums[mid+1];
+                   mini = min(mini,minelement);
+                   right = mid-1;
+              }
+         }
+         return mini;
+
+    }
+};
