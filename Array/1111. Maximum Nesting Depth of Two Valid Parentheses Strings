@@ -6,7 +6,7 @@ public:
  
         for (char c : seq) {
             if (c == '(') {  
-                depth++;
+                depth++; 
                 ans.push_back(depth % 2);
             } else {
                 ans.push_back(depth % 2);   
