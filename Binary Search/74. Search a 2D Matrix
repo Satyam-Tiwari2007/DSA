@@ -1,0 +1,36 @@
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int up=0;
+        int down = matrix.size()-1;
+        int left=0;
+        int right = matrix[0].size()-1;
+        while(up<=down){
+            int hozmid = up+(down-up)/2;
+            if(matrix[hozmid][0]==target){
+                return true;
+            }
+            else if(matrix[hozmid][0]>target){
+                down=hozmid-1;
+            }
+            else if(matrix[hozmid][0]<target&&matrix[hozmid][right]>=target){
+                while(left<=right){
+                    int vermid = left+(right-left)/2;
+                    if(matrix[hozmid][vermid]==target){
+                        return true;
+                    }
+                    else if(matrix[hozmid][vermid]<target){
+                        left=vermid+1;
+                    }else{
+                        right=vermid-1;
+                    }
+                }
+                return false;
+            }
+            else{
+                up=hozmid+1;
+            }
+        }
+        return false;
+    }
+};
