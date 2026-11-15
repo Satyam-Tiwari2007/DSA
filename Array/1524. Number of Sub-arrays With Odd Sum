@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int numOfSubarrays(vector<int>& arr) {
+        int mod = (1e9+7);
+        int ans = 0;
+        int prefix =0;
+        int NumEven =1;
+        int NumOdd = 0;
+        for(int x:arr){
+            prefix+=x;
+            if(prefix%2==0){
+                ans = (ans+NumOdd)%mod;
+                NumEven++;
+            }else{
+                ans = (ans+NumEven)%mod;
+                NumOdd++;
+            }
+        }
+        return ans;
+
+    }
+};
