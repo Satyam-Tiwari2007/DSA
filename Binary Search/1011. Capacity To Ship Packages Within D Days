@@ -14,7 +14,7 @@ public:
         return true;
        }else{
         return false;
-       }
+       } 
     }
     int shipWithinDays(vector<int>& weights, int days) {
         int low = *max_element(weights.begin(), weights.end());
