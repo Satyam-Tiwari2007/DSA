@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool checkString(string s) {
+        int Acnt=0;
+        int Scnt=0;
+        for(int i=0;i<s.size();i++){
+            if(s[i]=='a'){
+                Acnt++;
+            }
+        }
+        for(int i=0;i<s.size();i++){
+             if(s[i]=='b'){
+                if(Acnt==Scnt){
+                    return true;
+                }else{
+                    return false;
+                }
+
+             }
+             Scnt++;
+        }
+        return true;
+    }
+};
